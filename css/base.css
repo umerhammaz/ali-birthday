@@ -1,6 +1,6 @@
 :root {
-  --bg: #0d0d1a;
-  --bg-alt: #14142b;
+  --bg: #0a0416;
+  --bg-alt: #1a0d2e;
   --gold: #ffc107;
   --gold-dark: #e0a800;
   --gold-soft: rgba(255, 193, 7, 0.15);
@@ -21,7 +21,8 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: var(--bg);
+  background: linear-gradient(160deg, #0a0416 0%, #12082a 50%, #1a0d2e 100%);
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
@@ -33,8 +34,8 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at 15% 20%, rgba(255, 193, 7, 0.08), transparent 45%),
-    radial-gradient(circle at 85% 80%, rgba(255, 107, 107, 0.06), transparent 45%);
+    radial-gradient(circle at 15% 20%, rgba(155, 89, 255, 0.12), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(255, 107, 107, 0.08), transparent 45%);
   z-index: -2;
   pointer-events: none;
 }
