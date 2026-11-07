@@ -1,0 +1,299 @@
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #1a1a2e;
+  box-shadow: 0 8px 24px rgba(255, 193, 7, 0.35);
+}
+
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(255, 193, 7, 0.5); }
+.btn-primary:active { transform: translateY(0); }
+.btn-large { padding: 1.1rem 2.6rem; font-size: 1.15rem; }
+
+.balloon {
+  position: absolute;
+  width: 60px;
+  height: 74px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  opacity: 0.85;
+  animation: float 6s ease-in-out infinite;
+}
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.35);
+}
+.balloon-1 { left: 8%; top: 15%; background: linear-gradient(180deg, #ff6b6b, #c92a2a); animation-delay: 0s; }
+.balloon-2 { left: 18%; top: 30%; background: linear-gradient(180deg, var(--gold), #b8860b); animation-delay: 1s; }
+.balloon-3 { right: 12%; top: 20%; background: linear-gradient(180deg, #4dabf7, #1971c2); animation-delay: 2s; }
+.balloon-4 { right: 22%; top: 45%; background: linear-gradient(180deg, #f783ac, #a61e4d); animation-delay: 0.5s; }
+.balloon-5 { left: 45%; top: 8%; background: linear-gradient(180deg, #b197fc, #5f3dc4); animation-delay: 1.5s; }
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.countdown-box {
+  min-width: 110px;
+  padding: 1.5rem 1rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+
+.countdown-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.countdown-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.countdown-msg { color: var(--text-dim); font-size: 1.05rem; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img { transform: scale(1.08); }
+
+.gallery-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--gold);
+  background: linear-gradient(135deg, rgba(255,193,7,0.1), rgba(255,255,255,0.03));
+}
+
+.wishes-carousel { position: relative; overflow: hidden; max-width: 700px; margin: 0 auto; }
+.wishes-track { display: flex; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+.wish-card {
+  flex: 0 0 100%;
+  padding: 2rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+.wish-text { font-size: 1.1rem; color: var(--text); margin-bottom: 1rem; font-style: italic; }
+.wish-from { color: var(--gold); font-weight: 600; }
+.wishes-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; }
+.wish-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--glass-border); transition: background 0.2s; }
+.wish-dot.active { background: var(--gold); }
+
+.cake-wrap { display: flex; justify-content: center; margin: 2rem 0; }
+.cake {
+  position: relative;
+  width: 260px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.candles { display: flex; gap: 8px; margin-bottom: 4px; position: relative; z-index: 3; }
+.candle {
+  position: relative;
+  width: 10px;
+  height: 42px;
+  background: linear-gradient(180deg, #fff, #f5e6d3);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.candle:hover { transform: translateY(-3px); }
+
+.flame {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 20px;
+  background: radial-gradient(circle at 50% 70%, #fff 10%, #ffc107 40%, #ff6b6b 80%);
+  border-radius: 50% 50% 20% 20%;
+  animation: flicker 0.4s ease-in-out infinite alternate;
+  box-shadow: 0 0 16px rgba(255, 193, 7, 0.8);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.candle.out .flame { opacity: 0; transform: translateX(-50%) scale(0.2); }
+
+.cake-top {
+  width: 220px;
+  height: 34px;
+  background: linear-gradient(180deg, #fff5d6, #ffd966);
+  border-radius: 16px 16px 6px 6px;
+  position: relative;
+  z-index: 2;
+  box-shadow: inset 0 -6px 12px rgba(0,0,0,0.08);
+}
+
+.cake-layer { width: 100%; border-radius: 8px 8px 6px 6px; position: relative; z-index: 1; }
+.cake-layer-1 {
+  width: 220px;
+  height: 40px;
+  background: linear-gradient(180deg, #d96a6a, #a83232);
+}
+.cake-layer-2 {
+  width: 260px;
+  height: 50px;
+  background: linear-gradient(180deg, #a83232, #6b1e1e);
+}
+.cake-plate {
+  width: 300px;
+  height: 14px;
+  background: linear-gradient(180deg, #d4af37, #8b6914);
+  border-radius: 50%;
+  margin-top: 4px;
+}
+
+.cake-msg { font-size: 1.15rem; color: var(--gold); min-height: 1.6em; font-weight: 500; }
+
+.gift-hint, .cake-hint { color: var(--text-dim); margin-bottom: 1.5rem; }
+
+.music-toggle {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  font-size: 1.3rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background 0.2s;
+}
+.music-toggle:hover { transform: scale(1.1); background: var(--gold-soft); }
+.music-toggle.playing { background: var(--gold-soft); border-color: var(--gold); }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.lightbox.open { display: flex; opacity: 1; }
+.lightbox-img { max-width: 90vw; max-height: 85vh; border-radius: var(--radius); box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--text);
+  backdrop-filter: blur(12px);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.modal.open { display: flex; opacity: 1; }
+.modal-content {
+  background: linear-gradient(160deg, var(--bg-alt), var(--bg));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--text);
+}
+.modal-icon { font-size: 3rem; margin: 0.5rem 0; }
+.modal-title { font-size: 1.8rem; color: var(--gold); margin: 1rem 0; }
+.modal-text { color: var(--text-dim); line-height: 1.7; font-size: 1.05rem; }
